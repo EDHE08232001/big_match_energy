@@ -1,0 +1,160 @@
+/* src/styles/Header.css */
+
+/* Root container for the header */
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between logo, nav, and button */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, #6C2BD9, #805AD5); /* Gradient background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: padding 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  padding-top: 20px; /* Added top padding to give room for the logo */
+  padding-bottom: 20px; /* Added bottom padding for aesthetics */
+}
+
+/* Ensure content doesn't get hidden under the fixed header */
+body {
+  padding-top: 80px; /* Adjust the padding-top of the body to prevent overlap with fixed header */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between logo and website name */
+}
+
+.logo {
+  width: 40px; /* Logo size */
+  height: auto;
+}
+
+.website-name {
+  font-size: 1.5rem; /* Website name font size */
+  font-weight: 700; /* Bold text */
+  color: white; /* Text color */
+}
+
+/* Navigation bar styles */
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* Space between navigation items */
+  list-style: none; /* Remove default list styling */
+  margin: 0;
+}
+
+.nav-links li {
+  font-size: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FFD60A; /* Highlight color on hover */
+}
+
+/* Optional button wrapper alignment */
+.header-button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header-button-wrapper.left {
+  justify-content: flex-start;
+}
+
+.header-button-wrapper.center {
+  justify-content: center;
+}
+
+.header-button-wrapper.right {
+  justify-content: flex-end;
+}
+
+/* Header button styles */
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px; /* Pill shape for the button */
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Button color themes */
+.button.blue.primary {
+  background: linear-gradient(45deg, #007aff, #00a2ff); /* Gradient button background */
+  color: white;
+}
+
+.button.blue.primary:hover {
+  background: linear-gradient(45deg, #0062cc, #0086d9); /* Darker gradient on hover */
+}
+
+.button.blue.secondary {
+  background-color: #e5f6ff; /* Light blue background */
+  color: #007aff; /* Blue text */
+}
+
+.button.blue.secondary:hover {
+  background-color: #cbeeff; /* Darker background on hover */
+}
+
+/* Mobile menu styles */
+.menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem; /* Larger font size for mobile */
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide nav links by default on mobile */
+  }
+
+  .menu-icon {
+    display: block; /* Show the menu icon */
+  }
+
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(45deg, #6C2BD9, #805AD5);
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* Header style on scroll */
+.header.scrolled {
+  padding: 0.5rem 2rem; /* Reduced padding when scrolled */
+  background: #6C2BD9; /* Simplified background on scroll */
+}
