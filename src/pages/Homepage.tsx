@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 import Header from './../components/Header';
 import Button from './../components/Button';
 import './../styles/Homepage.css';
@@ -40,17 +40,17 @@ const Homepage: React.FC = () => {
   };
 
   // Handles smooth scrolling when navigating between sections
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      window.scrollTo({
-        top: (targetElement as HTMLElement).offsetTop - 80, // Account for the fixed header height
-        behavior: 'smooth',
-      });
-      setIsMobileMenuOpen(false); // Close mobile menu after clicking a link
-    }
-  };
+  // const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  //   e.preventDefault();
+  //   const targetElement = document.querySelector(targetId);
+  //   if (targetElement) {
+  //     window.scrollTo({
+  //       top: (targetElement as HTMLElement).offsetTop - 80, // Account for the fixed header height
+  //       behavior: 'smooth',
+  //     });
+  //     setIsMobileMenuOpen(false); // Close mobile menu after clicking a link
+  //   }
+  // };
 
   return (
     <div>
